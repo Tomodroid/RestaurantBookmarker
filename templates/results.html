@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>RestaurantSearch - Results</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h5 class="text-white bg-secondary">レストラン 検索＆ブックマークアプリ</h5>
+    <a class="btn btn-primary" href="/api/bookmarks">ブックマークされたレストラン一覧</a>
+
+    <h4>検索結果</h4>
+    <table class="table">
+        <tr>
+            <th>レストラン名</th>
+            <th>最寄り駅</th>
+            <th>ジャンル</th>
+            <th>お店の特徴</th>
+            <th>予算目安</th>
+            <th>ブックマーク</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.name }}</td>
+            <td>{{ result.station }}</td>
+            <td>{{ result.genre }}</td>
+            <td>{{ result.catch }}</td>
+            <td>{{ result.budget }}</td>
+            <td>
+                <a class="btn btn-success" href="/api/bookmarks/{{result.id}}/register">ブックマーク</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

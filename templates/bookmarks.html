@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>RestaurantSearch - Bookmarks</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h5 class="text-white bg-secondary">レストラン 検索＆ブックマークアプリ</h5>
+    <a class="btn btn-info" href="/">ホームに戻る</a>
+
+    {% if bookmarks|length == 0 %}
+    <h4>ブックマーク一覧</h4>
+    <p>現在ブックマークされているレストランはありません。</p>
+    
+    {% else %}
+    <h4>ブックマーク一覧</h4>
+    <table class="table">
+        <tr>
+            <th>レストラン名</th>
+            <th>最寄り駅</th>
+            <th>ジャンル</th>
+            <th>お店の特徴</th>
+            <th>予算目安</th>
+            <th>削除</th>
+        </tr>
+        {% for bookmark in bookmarks %}
+        <tr>
+            <td>{{ bookmark.name }}</td>
+            <td>{{ bookmark.station }}</td>
+            <td>{{ bookmark.genre }}</td>
+            <td>{{ bookmark.catch }}</td>
+            <td>{{ bookmark.budget }}</td>
+            <td>
+                <a class="btn btn-danger" href="/api/bookmarks/{{bookmark.id}}/delete">削除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</div>
+{% endblock %}

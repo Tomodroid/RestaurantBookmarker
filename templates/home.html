@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>RestautantSearch - Home</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h5 class="text-white bg-secondary">レストラン 検索＆ブックマークアプリ</h5>
+    <h4>レストラン 検索＆ブックマークアプリへようこそ！</h4>
+    <p>
+        郵便番号を入力すると、最寄り駅の半径500m以内にあるレストランを検索します。<br>
+        レストランはホットペッパーグルメのおすすめ順に、最大50件表示します。<br>
+        検索結果の中から、ブックマークしたいレストランを選ぶことができます。<br>
+        これまでにブックマークされたレストランを見るには、下のボタンをクリックしてください。
+    </p>
+           
+    <form action="/" method="post">
+        <input type="text" name="mypost" id="mypost" class="form-control" placeholder="郵便番号を半角・ハイフンなしで入力（例: 1690051）">
+        <input type="submit" value="検索" class="btn btn-secondary">
+    </form><br>
+    
+    <a class="btn btn-primary" href="/api/bookmarks">ブックマークされたレストラン一覧</a>
+</div>
+{% endblock %}
