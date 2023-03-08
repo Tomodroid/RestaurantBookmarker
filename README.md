@@ -1,3 +1,3 @@
-# RestaurantReseacher
+# RestaurantBookmarker
 
 一般公開されているAPIを用い、レストランの検索機能とブックマーク機能をローカルで実装したアプリです。
