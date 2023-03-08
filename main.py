@@ -1,4 +1,4 @@
-# 公開されているAPIを用い、レストランの検索とブックマークを実装したアプリ
+# 一般公開されているAPIを用い、レストランの検索とブックマークを実装したアプリ
 
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
