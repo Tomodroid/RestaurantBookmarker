@@ -1,5 +1,3 @@
-# 初級で作ったアプリを再利用したものです。
-
 # Web API 1つ目: HeartRails Geo API
 # 公式URL: http://geoapi.heartrails.com/api.html
 # エンドポイント: http://geoapi.heartrails.com/api/json
